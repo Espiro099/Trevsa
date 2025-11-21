@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        --trevsa-transition-duration: 300ms;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply antialiased;
+        color: var(--text-primary);
+        /* Background se maneja en custom-theme.css */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-medium tracking-tight;
+        color: var(--text-primary);
+    }
+}
+
+@layer components {
+    /* Los estilos de botones están en custom-theme.css */
+    /* Se mantienen aquí solo para compatibilidad con Tailwind */
+    
+    .card {
+        @apply glass-card;
+    }
+
+    .card-header {
+        @apply modern-card-header;
+    }
+
+    .card-body {
+        @apply modern-card-body;
+    }
+
+    .sidebar-link {
+        @apply nav-link;
+    }
+
+    .sidebar-link-active {
+        @apply nav-link active;
+    }
+
+    .sidebar-link-inactive {
+        @apply nav-link;
+    }
+
+    .status-chip {
+        @apply status-badge;
+    }
+
+    .table-header {
+        @apply table-modern th;
+    }
+
+    .table-cell {
+        @apply table-modern td;
+    }
+}
+
+@layer utilities {
+    .transition-fast {
+        transition-duration: var(--transition-fast);
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Alpine.js x-cloak - Oculta elementos hasta que Alpine.js esté listo */
+    [x-cloak] {
+        display: none !important;
+    }
+}
